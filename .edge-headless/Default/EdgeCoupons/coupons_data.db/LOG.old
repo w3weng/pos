@@ -1,0 +1,9 @@
+2026/05/03-12:44:56.793 5d50 Reusing MANIFEST C:\xampp\htdocs\pos\.edge-headless\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/05/03-12:44:56.794 5d50 Recovering log #7
+2026/05/03-12:44:56.797 5d50 Level-0 table #10: started
+2026/05/03-12:44:56.802 5d50 Level-0 table #10: 682300 bytes OK
+2026/05/03-12:44:56.803 5d50 Recovering log #9
+2026/05/03-12:44:56.803 5d50 Reusing old log C:\xampp\htdocs\pos\.edge-headless\Default\EdgeCoupons/coupons_data.db/000009.log 
+2026/05/03-12:44:56.805 5d50 Delete type=0 #7
+2026/05/03-12:44:56.806 6760 Compacting 4@0 + 0@1 files
+2026/05/03-12:44:56.811 6760 compacted to: files[ 4 0 0 0 0 0 0 ]

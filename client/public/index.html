@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Enterprise POS & Inventory Management SaaS System" />
+    <title>POS Pro - Point of Sale System</title>
+    <script>
+        (function () {
+            const shouldIgnoreStartupError = function (message, source, error) {
+                const normalizedMessage = String(message || '');
+                const normalizedSource = String(source || '');
+                const isEthereumInjectionError = /ethereum|selectedAddress/i.test(normalizedMessage)
+                    || /ethereum|selectedAddress/i.test(String(error && error.message ? error.message : ''));
+                const isOpaqueScriptError = normalizedMessage === 'Script error.' && !normalizedSource;
+
+                return isEthereumInjectionError || isOpaqueScriptError;
+            };
+
+            window.addEventListener('error', function (event) {
+                if (!shouldIgnoreStartupError(event.message, event.filename, event.error)) {
+                    return;
+                }
+
+                if (typeof event.preventDefault === 'function') {
+                    event.preventDefault();
+                }
+
+                if (typeof event.stopImmediatePropagation === 'function') {
+                    event.stopImmediatePropagation();
+                }
+            }, true);
+
+            window.addEventListener('unhandledrejection', function (event) {
+                const reasonMessage = String(
+                    event && event.reason && event.reason.message
+                        ? event.reason.message
+                        : event && event.reason
+                            ? event.reason
+                            : ''
+                );
+
+                if (!shouldIgnoreStartupError(reasonMessage, '', event && event.reason)) {
+                    return;
+                }
+
+                if (typeof event.preventDefault === 'function') {
+                    event.preventDefault();
+                }
+
+                if (typeof event.stopImmediatePropagation === 'function') {
+                    event.stopImmediatePropagation();
+                }
+            }, true);
+
+            window.onerror = function (message, source, lineno, colno, error) {
+                return shouldIgnoreStartupError(message, source, error);
+            };
+
+            if (typeof window.ethereum === 'undefined') {
+                let ethereumProvider = { selectedAddress: undefined };
+                Object.defineProperty(window, 'ethereum', {
+                    configurable: true,
+                    enumerable: true,
+                    get: function () {
+                        return ethereumProvider;
+                    },
+                    set: function (value) {
+                        ethereumProvider = value || { selectedAddress: undefined };
+                    }
+                });
+            }
+        }());
+    </script>
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+</body>
+</html>

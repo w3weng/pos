@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Overflow Debug</title>
+</head>
+<body>
+    <pre id="output">{
+  "viewportWidth": 390,
+  "scrollWidth": 382,
+  "overflowElements": [
+    {
+      "tag": "aside",
+      "className": "fixed top-0 left-0 z-30 flex h-[100dvh] w-[18rem] max-w-[85vw] flex-col border-r transition-transform duration-300 lg:static lg:z-0 -translate-x-full lg:translate-x-0 bg-white border-gray-200",
+      "text": "POS ProDashboardPOSProductsSalesAnalyticsUsersSettingsOverflow Test 177778355560",
+      "left": -288,
+      "right": 0,
+      "width": 288
+    },
+    {
+      "tag": "div",
+      "className": "flex items-center justify-between border-b border-gray-200 p-4 dark:border-gray-700 sm:p-6",
+      "text": "POS Pro",
+      "left": -288,
+      "right": -1,
+      "width": 287
+    },
+    {
+      "tag": "h1",
+      "className": "text-xl font-bold text-gray-900",
+      "text": "POS Pro",
+      "left": -272,
+      "right": -195,
+      "width": 77
+    },
+    {
+      "tag": "button",
+      "className": "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white lg:hidden",
+      "text": "",
+      "left": -41,
+      "right": -17,
+      "width": 24
+    },
+    {
+      "tag": "svg",
+      "className": {},
+      "text": "",
+      "left": -41,
+      "right": -17,
+      "width": 24
+    },
+    {
+      "tag": "line",
+      "className": {},
+      "text": "",
+      "left": -35,
+      "right": -23,
+      "width": 12
+    },
+    {
+      "tag": "line",
+      "className": {},
+      "text": "",
+      "left": -35,
+      "right": -23,
+      "width": 12
+    },
+    {
+      "tag": "nav",
+      "className": "flex-1 space-y-2 overflow-y-auto px-3 py-4 sm:px-4 sm:py-6",
+      "text": "DashboardPOSProductsSalesAnalyticsUsersSettings",
+      "left": -288,
+      "right": -1,
+      "width": 287
+    },
+    {
+      "tag": "a",
+      "className": "flex items-center space-x-3 rounded-lg px-4 py-3 transition-colors text-gray-700 hover:bg-gray-100",
+      "text": "Dashboard",
+      "left": -276,
+      "right": -13,
+      "width": 263
+    },
+    {
+      "tag": "svg",
+      "className": {},
+      "text": "",
+      "left": -260,
+      "right": -240,
+      "width": 20
+    },
+    {
+      "tag": "path",
+      "className": {},
+      "text": "",
+      "left": -260,
+      "right": -240,
+      "width": 20
+    },
+    {
+      "tag": "path",
+      "className": {},
+      "text": "",
+      "left": -257,
+      "right": -242,
+      "width": 15
+    },
+    {
+      "tag": "span",
+      "className": "font-medium",
+      "text": "Dashboard",
+      "left": -228,
+      "right": -149,
+      "width": 79
+    },
+    {
+      "tag": "a",
+      "className": "flex items-center space-x-3 rounded-lg px-4 py-3 transition-colors bg-blue-50 text-blue-600",
+      "text": "POS",
+      "left": -276,
+      "right": -13,
+      "width": 263
+    },
+    {
+      "tag": "svg",
+      "className": {},
+      "text": "",
+      "left": -260,
+      "right": -240,
+      "width": 20
+    },
+    {
+      "tag": "path",
+      "className": {},
+      "text": "",
+      "left": -260,
+      "right": -240,
+      "width": 20
+    },
+    {
+      "tag": "path",
+      "className": {},
+      "text": "",
+      "left": -259,
+      "right": -242,
+      "width": 17
+    },
+    {
+      "tag": "span",
+      "className": "font-medium",
+      "text": "POS",
+      "left": -228,
+      "right": -198,
+      "width": 30
+    },
+    {
+      "tag": "a",
+      "className": "flex items-center space-x-3 rounded-lg px-4 py-3 transition-colors text-gray-700 hover:bg-gray-100",
+      "text": "Products",
+      "left": -276,
+      "right": -13,
+      "width": 263
+    },
+    {
+      "tag": "svg",
+      "className": {},
+      "text": "",
+      "left": -260,
+      "right": -240,
+      "width": 20
+    },
+    {
+      "tag": "path",
+      "className": {},
+      "text": "",
+      "left": -260,
+      "right": -240,
+      "width": 20
+    },
+    {
+      "tag": "path",
+      "className": {},
+      "text": "",
+      "left": -257,
+      "right": -242,
+      "width": 15
+    },
+    {
+      "tag": "span",
+      "className": "font-medium",
+      "text": "Products",
+      "left": -228,
+      "right": -164,
+      "width": 64
+    },
+    {
+      "tag": "a",
+      "className": "flex items-center space-x-3 rounded-lg px-4 py-3 transition-colors text-gray-700 hover:bg-gray-100",
+      "text": "Sales",
+      "left": -276,
+      "right": -13,
+      "width": 263
+    },
+    {
+      "tag": "svg",
+      "className": {},
+      "text": "",
+      "left": -260,
+      "right": -240,
+      "width": 20
+    }
+  ]
+}</pre>
+    <script>
+        (async function () {
+            const output = document.getElementById('output');
+            const timestamp = Date.now();
+            const baseUrl = `${window.location.protocol}//${window.location.hostname}:5000/api`;
+            const email = `overflow-test-${timestamp}@example.com`;
+            const password = 'Password123!';
+
+            const postJson = async (path, payload, token) => {
+                const response = await fetch(`${baseUrl}${path}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+                    },
+                    body: JSON.stringify(payload),
+                });
+                const data = await response.json();
+
+                if (!response.ok || !data.success) {
+                    throw new Error(data.message || `Request failed: ${path}`);
+                }
+
+                return data.data;
+            };
+
+            try {
+                await postJson('/auth/register', {
+                    storeName: `Overflow Test ${timestamp}`,
+                    email,
+                    password,
+                    phone: '09170000000',
+                });
+
+                const loginData = await postJson('/auth/login', { email, password });
+                const { token, user } = loginData;
+
+                localStorage.setItem('token', token);
+                localStorage.setItem('user', JSON.stringify(user));
+                localStorage.setItem('auth-store', JSON.stringify({
+                    state: {
+                        user,
+                        token,
+                        isAuthenticated: true,
+                    },
+                    version: 0,
+                }));
+
+                const category = await postJson('/categories', {
+                    name: 'Overflow Test Category',
+                    description: 'Temporary category for layout debugging',
+                }, token);
+
+                await postJson('/products', {
+                    name: 'Overflow Test Product',
+                    description: 'Temporary product for layout debugging',
+                    categoryId: String(category.id),
+                    sku: `OVERFLOW-${timestamp}`,
+                    barcode: `${timestamp}`,
+                    purchasePrice: '50',
+                    sellingPrice: '75',
+                    imageUrl: '',
+                    isAvailable: true,
+                }, token);
+
+                const iframe = document.createElement('iframe');
+                iframe.src = '/pos';
+                iframe.style.width = '390px';
+                iframe.style.height = '844px';
+                iframe.style.border = '0';
+                document.body.appendChild(iframe);
+
+                iframe.onload = () => {
+                    setTimeout(() => {
+                        try {
+                            const doc = iframe.contentDocument;
+                            const win = iframe.contentWindow;
+                            const viewportWidth = win.innerWidth;
+                            const scrollWidth = doc.documentElement.scrollWidth;
+
+                            const overflowElements = Array.from(doc.querySelectorAll('body *'))
+                                .map((element) => {
+                                    const rect = element.getBoundingClientRect();
+                                    return {
+                                        tag: element.tagName.toLowerCase(),
+                                        className: element.className || '',
+                                        text: (element.textContent || '').trim().slice(0, 80),
+                                        left: Math.round(rect.left),
+                                        right: Math.round(rect.right),
+                                        width: Math.round(rect.width),
+                                    };
+                                })
+                                .filter((item) => item.right > viewportWidth + 1 || item.left < -1)
+                                .slice(0, 25);
+
+                            output.textContent = JSON.stringify({
+                                viewportWidth,
+                                scrollWidth,
+                                overflowElements,
+                            }, null, 2);
+                        } catch (error) {
+                            output.textContent = error.message || 'Failed to inspect iframe';
+                        }
+                    }, 4000);
+                };
+            } catch (error) {
+                output.textContent = error.message || 'Mobile overflow debug failed';
+            }
+        }());
+    </script>
+
+
+<iframe src="/pos" style="width: 390px; height: 844px; border: 0px;"></iframe></body></html>
