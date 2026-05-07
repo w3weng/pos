@@ -30,10 +30,16 @@ function App() {
 
     if (loading) {
         return (
-            <div className={`flex min-h-[100dvh] items-center justify-center ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
+            <div
+                className={`flex min-h-[100dvh] items-center justify-center ${
+                    isDark
+                        ? 'bg-slate-950 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(59,130,246,0.12),transparent)]'
+                        : 'bg-slate-100 bg-[radial-gradient(ellipse_100%_60%_at_50%_-10%,rgba(59,130,246,0.08),transparent)]'
+                }`}
+            >
                 <div className="text-center">
-                    <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                    <p className={`text-lg font-semibold ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>Loading...</p>
+                    <div className="mx-auto mb-4 h-14 w-14 animate-spin rounded-full border-4 border-blue-500 border-t-transparent shadow-lg shadow-blue-500/20" />
+                    <p className={`text-base font-bold ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>Loading workspace…</p>
                 </div>
             </div>
         );

@@ -98,8 +98,8 @@ export const Badge = ({ variant = 'primary', children, className = '' }) => {
 };
 
 export const Modal = ({ children, isDark = false, className = '' }) => (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4">
-        <Card isDark={isDark} className={`max-h-[90dvh] w-full overflow-y-auto ${className}`}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-[3px]">
+        <Card isDark={isDark} className={`max-h-[90dvh] w-full overflow-y-auto shadow-2xl ring-1 ring-black/10 dark:ring-white/10 ${className}`}>
             {children}
         </Card>
     </div>

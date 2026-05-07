@@ -26,23 +26,29 @@ const Layout = ({ children }) => {
     }, []);
 
     return (
-        <div className={`flex h-[100dvh] overflow-hidden ${isDark ? 'bg-slate-950' : 'bg-slate-100'}`}>
-            {/* Sidebar */}
+        <div
+            className={`flex h-[100dvh] overflow-hidden ${
+                isDark
+                    ? 'bg-slate-950 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(59,130,246,0.12),transparent)]'
+                    : 'bg-slate-100 bg-[radial-gradient(ellipse_100%_60%_at_50%_-10%,rgba(59,130,246,0.06),transparent)]'
+            }`}
+        >
             <Sidebar isOpen={sidebarOpen} toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
-            {/* Main content */}
-            <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
-                {/* Top bar */}
-                <TopBar 
-                    user={user} 
-                    isDark={isDark} 
+            <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+                <TopBar
+                    user={user}
+                    isDark={isDark}
                     toggleTheme={toggleTheme}
                     toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
                 />
 
-                {/* Page content */}
-                <main className={`flex-1 overflow-x-hidden overflow-y-auto ${isDark ? 'bg-slate-950' : 'bg-slate-100'}`}>
-                    <div className="flex min-h-full w-full min-w-0 px-3 sm:px-6 lg:px-8">
+                <main
+                    className={`relative min-h-0 flex-1 overflow-x-hidden overflow-y-auto scroll-smooth ${
+                        isDark ? 'bg-transparent' : 'bg-transparent'
+                    }`}
+                >
+                    <div className="mx-auto flex min-h-full w-full min-w-0 max-w-[1920px] px-3 sm:px-6 lg:px-8">
                         {children}
                     </div>
                 </main>

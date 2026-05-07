@@ -48,36 +48,57 @@ const LoginPage = () => {
     };
 
     return (
-        <div className={`relative flex min-h-[100dvh] items-center justify-center px-4 py-8 sm:px-6 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}>
+        <div
+            className={`relative flex min-h-[100dvh] items-center justify-center px-4 py-8 sm:px-6 ${
+                isDark
+                    ? 'bg-slate-950 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(59,130,246,0.14),transparent)]'
+                    : 'bg-slate-100 bg-[radial-gradient(ellipse_100%_60%_at_50%_-10%,rgba(59,130,246,0.08),transparent)]'
+            }`}
+        >
             <button
                 type="button"
                 onClick={toggleTheme}
-                className={`absolute right-4 top-4 inline-flex min-h-[2.5rem] items-center gap-2 rounded-xl border px-4 text-sm font-bold transition-colors ${
+                className={`absolute right-4 top-4 inline-flex min-h-[2.5rem] items-center gap-2 rounded-xl border px-4 text-sm font-bold backdrop-blur-sm transition-colors ${
                     isDark
-                        ? 'border-slate-700 bg-slate-800 text-slate-100 hover:bg-slate-700'
-                        : 'border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50'
+                        ? 'border-slate-700/80 bg-slate-900/80 text-slate-100 hover:bg-slate-800'
+                        : 'border-slate-200/90 bg-white/90 text-slate-700 shadow-sm hover:bg-white'
                 }`}
             >
                 {isDark ? <FiSun size={17} /> : <FiMoon size={17} />}
-                {isDark ? 'Light Mode' : 'Dark Mode'}
+                {isDark ? 'Light' : 'Dark'}
             </button>
             <div className="w-full max-w-md">
                 <div className="mb-6 text-center sm:mb-8">
-                    <h1 className={`mb-2 text-3xl font-bold sm:text-4xl ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    <div
+                        className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 text-2xl font-black text-white shadow-lg shadow-blue-600/30`}
+                    >
+                        P
+                    </div>
+                    <h1 className={`mb-2 text-3xl font-black tracking-tight sm:text-4xl ${isDark ? 'text-white' : 'text-slate-900'}`}>
                         POS Pro
                     </h1>
-                    <p className={`text-base sm:text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Enterprise Point of Sale System
+                    <p className={`text-base font-semibold sm:text-lg ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                        Sign in to your store workspace
                     </p>
                 </div>
 
-                <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-lg p-5 sm:p-8`}>
-                    <h2 className={`mb-6 text-center text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                        Login to Your Account
+                <div
+                    className={`rounded-2xl border p-5 shadow-xl sm:p-8 ${
+                        isDark
+                            ? 'border-slate-800 bg-slate-900/90 shadow-black/40 backdrop-blur-md'
+                            : 'border-slate-200/80 bg-white/95 shadow-slate-200/50 backdrop-blur-md'
+                    }`}
+                >
+                    <h2 className={`mb-6 text-center text-xl font-black sm:text-2xl ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                        Log in
                     </h2>
 
                     {errors.submit && (
-                        <div className="mb-4 break-words rounded border border-red-400 bg-red-100 p-4 text-red-700">
+                        <div
+                            className={`mb-4 break-words rounded-xl border p-4 text-sm font-semibold ${
+                                isDark ? 'border-red-500/40 bg-red-950/50 text-red-200' : 'border-red-200 bg-red-50 text-red-800'
+                            }`}
+                        >
                             {errors.submit}
                         </div>
                     )}
